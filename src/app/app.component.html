@@ -1,6 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <form>
+<form #todoForm= "ngForm" (ngSubmit)="todoSubmit(todoForm.value)">
     <div class="form-group">
       <h1 class="text-center text-primary">Todo App</h1>
 
@@ -8,7 +7,7 @@
 
         <input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel>
 
-        
+
         <span class="input-group-text" (click)="addTodo(todo.value)">
 <i class="material-icons">add</i>
 </span>
@@ -20,10 +19,8 @@
 <li *ngFor="let todo of todoArray">{{todo}} <i (click)="deleteItem(todo)" class="material-icons">delete</i></li>
     </ul>
   </div>
-  </form>
-
+</form>
 </div>
 
 
-
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
